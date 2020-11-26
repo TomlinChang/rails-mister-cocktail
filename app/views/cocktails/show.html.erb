@@ -1,3 +1,12 @@
 <h1><%=  @cocktail.name %></h1>
-<!-- try working doing iteration on each dose -->
-<p><%= @cocktail %></p>
+
+<ul>
+<% @cocktail.doses.each do |content| %>
+  <li> <%= content.ingredient.name %> </li>
+  <ul>
+    <li> <%= content.description %> </li>
+  </ul>
+<!--   <%#= link_to 'Delete', dose_path(dose), method: :delete %> -->
+  <% end %>
+</ul>
+
