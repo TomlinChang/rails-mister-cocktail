@@ -1,21 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RailsMisterCocktail</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>RailsMisterCocktail</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  </head>
+</head>
 
-  <body>
-    <div class="container">
+<body>
+
+
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to cocktails_path, class: "navbar-brand" do %>
+    <%= image_tag "https://cdn1.vectorstock.com/i/1000x1000/83/25/martini-icon-or-logo-vector-4608325.jpg", class: 'rounded-circle' %>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Add Cocktail", new_cocktail_path, class: "px-4 py-2 text-white bg-primary rounded-pill" %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+  <div class="container">
+
     <%= yield %>
 
-    </div>
-  </body>
+  </div>
+</body>
 </html>
